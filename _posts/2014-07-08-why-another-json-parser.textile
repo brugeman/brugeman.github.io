@@ -1,0 +1,95 @@
+---
+layout: post
+title: Why another json parser?
+---
+
+h1. {{ page.title }}
+
+p(meta). 08 Jul 2014
+
+
+I have recently added "JAPY":https://github.com/brugeman/japy to my github. It is yet another json parser in C++, sharing space with many other ones. Why would someone spend time in the area so full of good products? Well, first - it is fun, and second - there are things that could be improved.
+
+Here is what makes japy stand out:
+
+# *Japy is built around a path language*, which allows you to address certain parts of the document. This greatly simplifies the traversal of complex input.
+
+bc..
+	int i = 0;
+	std::string json ("{\"a\": 1}");
+	japy::parse (json, "a") >> i;
+	assert (i == 1);
+
+	json = "{\"a\": {\"b\": 2}}";
+	japy::parse (json, "a/b") >> i;
+	assert (i == 2);
+
+# *Japy is a stream parser, yet easy to use*. It means you can process json streams or very big json documents without all those complexities that SAX-parsers impose.
+
+bc..
+   int sum = 0;
+
+   // a sample stream of input data blocks
+   std::string stream ("[11, 22, 33]");
+
+   // parser with a proper scope-path
+   japy::parser_t parser ("*");
+   for (auto part: stream)
+   {
+      // feed part to the parser
+      parser.put (part);
+
+      // iterate over nodes addressed by scope-path
+      for (auto node: parser)
+      {
+	 int v = 0;
+	 node >> v;
+	 sum += v;
+      }
+   }
+
+   // that's it
+   assert (sum == 66);	
+
+# *Japy is efficient*. As a stream parser, japy does not make data copies or memory-greedy. It is also built to avoid memory allocations and any other potentially useless work (like building DOM of the entire document).
+
+bc. Parsing a *1Mb json takes 10 ms* on my laptop.
+
+# *Japy is extensible* in the way similar to standard input streams: overload 'operator >>' to read into your favourite data types.
+
+bc..
+	// my precious
+	struct favourite_t
+	{
+		int area;
+	};
+
+	// overloading the conversion operator
+	const japy::node_t & operator >> (
+	      const japy::node_t & node, favourite_t & f)
+	{
+		int width = 0;
+		int height = 0;
+		node["width"] >> width;
+		node["height"] >> height;
+		f.speed = width * height;
+	}
+
+	// using >> as usual
+	favourite_t f;
+	const char * json = "{\"width\": 2, \"height\": 3}";
+	japy::parse (json, "/@") >> f;
+	assert (f.area == 6);
+
+# *Japy is simple*. Simple to use, and simply implemented (meaning less bugs). It is a single-header library, depending only on STL.
+
+bc..
+	Japy <b>does not</b>:
+	- implement json serialization (like most do)
+	- use hardware-specific complex techniques for speedup (like others do)
+	- use custom memory allocators (like others do)
+	- implement parsing of files (you know how to read files, right?)
+	- less is more, you know
+
+
+p. I hope this is enough to get you excited, so please try it and tell me what you think. Next time I will try to give some details about why japy is as good as I believe it is.
