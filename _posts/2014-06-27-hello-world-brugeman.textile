@@ -8,39 +8,16 @@ h1. Hello, world, that's Artur Brugeman!
 p(meta). 27 Jun 2014
 
 
-Yeah, that's me. I've recently come to a state when my thoughts and ideas should
-finally reach the paper (or your screens). For more than ten years I have been
-working as a software engineer, and yet there has been no sign of me on the 
-web. I'm planning to change that here, and if you are hurry about getting
-some new code to try, "here":https://github.com/brugeman/japy it is.
+Yeah, that's me. I've recently come to a state when my thoughts and ideas should finally reach the paper (or your screens). For more than ten years I have been working as a software engineer, and yet there has been no sign of me on the web. I'm planning to change that here, and if you are hurry about getting some new code to try, "here":https://github.com/brugeman/japy it is.
 
-And while the impatient ones are gone, let me try to outline one
-of the things that excites me the most in modern software world. It is 
-the Big Data, and it is not it's buzzword-ness that is appealing.
+And while the impatient ones are gone, let me try to outline one of the things that excites me the most in modern software world. It is the Big Data, and it is not it's buzzword-ness that is appealing.
 
-Big Data is cool because it makes conseptually trivial tasks very hard to
-implement right. Suppose we need to join two data sets. If SQL is the first
-thing that comes to mind when you hear 'join', you could just write something 
-like:
+Big Data is cool because it makes conseptually trivial tasks very hard to implement right. Suppose we need to join two data sets. If SQL is the first thing that comes to mind when you hear 'join', you could just write something like:
 
 	select * from a join b on a.id = b.id;
 
-This is a trivial problem indeed, until you are told that both tables 
-contain two billion rows. Now, if you are curious enough, go and 
-stress-test your favourite RDBMS by feeding it with that much data
-and calling that query. Most experts will not even consider such dataset a 
-'big data'. And yet, it is enough to cause trouble if we blindly apply some 
-obvious solutions or technologies. I have seen this task taking weeks,
-with programs written and several databases involved, while it can easily be
-done in half a day with Linux command line on any commodity machine. 
+This is a trivial problem indeed, until you are told that both tables contain two billion rows. Now, if you are curious enough, go and stress-test your favourite RDBMS by feeding it with that much data and calling that query. Most experts will not even consider such dataset a 'big data'. And yet, it is enough to cause trouble if we blindly apply some obvious solutions or technologies. I have seen this task taking weeks, with programs written and several databases involved, while it can easily be done in half a day with Linux command line on any commodity machine.
 
-And that is why big data is so wonderful. It is literally full of wonders. 
-It forces you to think deeply into the problem, and apply the most effective,
-most hardware friendly, and simple solution. And that solution is usually 
-not even close to what comes to mind first after you hear the problem 
-statement. Which, to me, is the 'software engineering'.
+And that is why big data is so wonderful. It is literally full of wonders. It forces you to think deeply into the problem, and apply the most effective, most hardware friendly, and simple solution. And that solution is usually not even close to what comes to mind first after you hear the problem statement. Which, to me, is the 'software engineering'.
 
-That's enough for the starters. Follow me on 
-"twitter":https://twitter.com/ArturBrugeman, and don't forget 
-to check out the "japy":https://github.com/brugeman/japy, 
-which I'll write about soon.
+That's enough for the starters. Follow me on "twitter":https://twitter.com/ArturBrugeman, and don't forget to check out the "japy":https://github.com/brugeman/japy, which I'll write about soon.
