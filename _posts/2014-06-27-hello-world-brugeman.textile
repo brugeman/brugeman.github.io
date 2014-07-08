@@ -12,7 +12,7 @@ Yeah, that's me. I've recently come to a state when my thoughts and ideas should
 finally reach the paper (or your screens). For more than ten years I have been
 working as a software engineer, and yet there has been no sign of me on the 
 web. I'm planning to change that here, and if you are hurry about getting
-some new code to try, here:https://github.com/brugeman/japy it is.
+some new code to try, "here":https://github.com/brugeman/japy it is.
 
 And while the impatient ones are gone, let me try to outline one
 of the things that excites me the most in modern software world. It is 
@@ -23,7 +23,7 @@ implement right. Suppose we need to join two data sets. If SQL is the first
 thing that comes to mind when you hear 'join', you could just write something 
 like:
 
-     select * from a join b on a.id = b.id;
+	select * from a join b on a.id = b.id;
 
 This is a trivial problem indeed, until you are told that both tables 
 contain two billion rows. Now, if you are curious enough, go and 
@@ -41,6 +41,6 @@ not even close to what comes to mind first after you hear the problem
 statement. Which, to me, is the 'software engineering'.
 
 That's enough for the starters. Follow me on 
-twitter:https://twitter.com/ArturBrugeman, and don't forget 
-to check out the japy:https://github.com/brugeman/japy, 
+"twitter":https://twitter.com/ArturBrugeman, and don't forget 
+to check out the "japy":https://github.com/brugeman/japy, 
 which I'll write about soon.
