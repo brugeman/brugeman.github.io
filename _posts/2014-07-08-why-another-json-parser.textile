@@ -27,10 +27,8 @@ Here is what makes japy stand out:
 </pre>
 <br>
 
-
 #_ *Japy is a stream parser, yet easy to use*. It means you can process json streams or very big json documents without all those complexities that SAX-parsers impose.
 <br>
-
 
 <pre>
    int sum = 0;
@@ -56,13 +54,11 @@ Here is what makes japy stand out:
 
    // that's it
    assert (sum == 66);	
-
 </pre>
-
+<br>
 
 #_ *Japy is efficient*. As a stream parser, japy does not make data copies or memory-greedy. It is also built to avoid memory allocations and any other potentially useless work (like building DOM of the entire document).
 <br>
-
 
 <pre>    Parsing a *1Mb json takes 10 ms* on my laptop.</pre>
 <br>
@@ -96,7 +92,6 @@ Here is what makes japy stand out:
 </pre>
 <br>
 
-
 #_ *Japy is simple*. Simple to use, and simply implemented (meaning less bugs). It is a single-header library, depending only on STL.
 <br>
 
@@ -109,6 +104,5 @@ Here is what makes japy stand out:
     - less is more, you know
 </pre>
 <br>
-
 
 I hope this is enough to get you excited, so please try it and tell me what you think. Next time I will try to give some details about why japy is as good as I believe it is.
