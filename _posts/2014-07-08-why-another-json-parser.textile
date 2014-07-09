@@ -57,7 +57,7 @@ Here is what makes japy stand out:
 </pre>
 <br>
 
-#_ *Japy is efficient*. As a stream parser, japy does not make data copies or memory-greedy. It is also built to avoid memory allocations and any other potentially useless work (like building DOM of the entire document).
+#_ *Japy is efficient*. As a stream parser, japy does not make data copies and is not memory-greedy. It is also built to avoid memory allocations and any other potentially useless work (like building DOM of the entire document).
 <br>
 
 <pre>    Parsing a *1Mb json takes 10 ms* on my laptop.</pre>
@@ -81,7 +81,7 @@ Here is what makes japy stand out:
         int height = 0;
         node["width"] >> width;
         node["height"] >> height;
-        f.speed = width * height;
+        f.area = width * height;
     }
 
     // using >> as usual
@@ -97,12 +97,19 @@ Here is what makes japy stand out:
 
 <pre>
     Japy *does not*:
-    - implement json serialization (like most do)
-    - use hardware-specific complex techniques for speedup (like others do)
-    - use custom memory allocators (like others do)
-    - implement parsing of files (you know how to read files, right?)
+    - implement json serialization (like "most":https://casablanca.codeplex.com/ "do":https://github.com/dropbox/json11)
+    - use hardware-specific complex techniques for speedup (like some "do":https://github.com/miloyip/rapidjson)
+    - use custom memory allocators (like "other":https://github.com/jacobsa/jsoncpp "do":https://github.com/jkriegshauser/fastjson)
+    - implement parsing of files, streams, etc (you know how to do IO, right?)
     - less is more, you know
 </pre>
 <br>
 
 I hope this is enough to get you excited, so please try it and tell me what you think. Next time I will try to give some details about why japy is as good as I believe it is.
+
+P.S.
+*Cons*:
+# Japy only works with utf-8.
+# Japy does not make copies, so input data blocks must live untouched as long as you work with the parser.
+# Japy currently requires C++11.
+
