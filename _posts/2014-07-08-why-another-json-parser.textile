@@ -60,7 +60,7 @@ Here is what makes japy stand out:
 #_ *Japy is efficient*. As a stream parser, japy does not make data copies and is not memory-greedy. It is also built to avoid memory allocations and any other potentially useless work (like building DOM of the entire document).
 <br>
 
-<blockquote>    Parsing a *1Mb json takes 10 ms* on my laptop.</blockquote>
+<code>    Parsing a *1Mb json takes 10 ms* on my laptop.</code>
 <br>
 
 #_ *Japy is extensible* in the way similar to standard input streams: overload @operator >>@ to read into your favourite data types.
